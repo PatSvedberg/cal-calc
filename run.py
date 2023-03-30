@@ -66,12 +66,13 @@ def jogging(worksheet):
     '''
     Function for jogging activity
     '''
-    jogging_distance = input("How many kilometers did you jog?: ")
+    jogging_time = input("How many minutes did you jog?: ")
     column_values = worksheet.col_values(2)  # Get all the values in the second column of the worksheet
     next_row = len(column_values) + 1  # Find the next empty row in the second column
-    worksheet.update_cell(next_row, 2, jogging_distance)  # Add jogging distance to the next empty slot in the second column
+    worksheet.update_cell(next_row, 2, jogging_time)  # Add jogging time to the next empty slot in the second column
+    calculate_jog_value(worksheet)
 
-    
+
 def swimming(worksheet):
     '''
     Function for swimming activity
@@ -82,7 +83,22 @@ def swimming(worksheet):
     worksheet.update_cell(next_row, 3, swimming_distance)  # Add swimming distance to the next empty slot in the third column
 
 
+def calculate_jog_value(worksheet):
+    '''
+    Print last value of jogging
+    '''
+    jog_values = worksheet.col_values(2)
+    last_value = int(jog_values[-1]) 
+    test_calc = last_value * 3
+
+    print(f"Last value in this columns is {last_value}")
+    print(f"Check calclation for fun... {test_calc}")
+
+
 def main():
+    '''
+    Main function
+    '''
     create_new_worksheet()
 
 main()

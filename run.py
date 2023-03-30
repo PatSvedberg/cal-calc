@@ -25,6 +25,9 @@ def create_new_worksheet():
     '''
     username = create_user()
     worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
+    worksheet.update_cell(1, 1, "jogging")
+    worksheet.update_cell(1, 2, "swimming")
+
     print(f"Welcome '{username}' what did you do today?\n")
     print("Use the keys 1-2 to select activity:\n")
     print("1 - Jogging")
@@ -32,23 +35,28 @@ def create_new_worksheet():
     
     activity = input("Select activity (1-2): ")
     if activity == '1':
-        jogging()
+        jogging(worksheet)  # Pass the worksheet object to the jogging function
     elif activity == '2':
-        swimming()
+        swimming(worksheet)  # Pass the worksheet object to the swimming function
     else:
         print("Invalid input, please select 1 or 2.")
 
-def jogging():
+def jogging(worksheet):
     '''
     Function for jogging activity
     '''
-    jogging = input("How many kilometers did you jog?: ")
+    jogging_distance = input("How many kilometers did you jog?: ")
+    next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
+    worksheet.update_cell(next_row, 1, jogging_distance)  # Add jogging distance to the worksheet
     
-def swimming():
+def swimming(worksheet):
     '''
     Function for swimming activity
     '''
-    swimming = input("How many kilometers did you swim?: ")
+    swimming_distance = input("How many kilometers did you swim?: ")
+    next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
+    worksheet.update_cell(next_row, 2, swimming_distance)  # Add swimming distance to the worksheet
+
 
 if __name__ == '__main__':
     create_new_worksheet()

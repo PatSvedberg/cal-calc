@@ -23,8 +23,18 @@ def insert_weight():
     '''
     Creates a value of the weight to calculate calories burnt
     '''
-    weight = input("Enter your currenct weight: ")
+    # Ask the user to enter their weight and convert it to an integer
+    while True:
+        weight = input("Enter your current weight: ")
+        try:
+            weight = int(weight)
+            break
+        except ValueError:
+            # If the user enters an invalid input, print an error message
+            print("Error: Weight must be an integer.")
+
     return weight
+
 
 def create_new_worksheet():
     '''

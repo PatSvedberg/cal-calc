@@ -19,21 +19,30 @@ def create_user():
     username = input("Enter username: ")
     return username
 
+def insert_weight():
+    '''
+    Creates a value of the weight to calculate calories burnt
+    '''
+    weight = input("Enter your currenct weight: ")
+    return weight
+
 def create_new_worksheet():
     '''
     Creates a new worksheet with the same name as the user
     '''
     username = create_user()
+    weight = insert_weight()
     worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
-    worksheet.update_cell(1, 1, "jogging")
-    worksheet.update_cell(1, 2, "swimming")
+    worksheet.update_cell(1, 1, "Weight(kg)")
+    worksheet.update_cell(2, 1, weight)
+    worksheet.update_cell(1, 2, "Jogging Distance(km)")
+    worksheet.update_cell(1, 3, "Swimming Distance(km)")
 
-    print(f"Welcome '{username}' what did you do today?\n")
-    print("Use the keys 1-2 to select activity:\n")
+    print(f"Welcome '{username}' what did you do today?\n")  
     print("1 - Jogging")
-    print("2 - Swimming\n")
-    
+    print("2 - Swimming\n")  
     activity = input("Select activity (1-2): ")
+
     if activity == '1':
         jogging(worksheet)  # Pass the worksheet object to the jogging function
     elif activity == '2':
@@ -47,7 +56,7 @@ def jogging(worksheet):
     '''
     jogging_distance = input("How many kilometers did you jog?: ")
     next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
-    worksheet.update_cell(next_row, 1, jogging_distance)  # Add jogging distance to the worksheet
+    worksheet.update_cell(next_row, 2, jogging_distance)  # Add jogging distance to the worksheet
     
 def swimming(worksheet):
     '''
@@ -55,8 +64,10 @@ def swimming(worksheet):
     '''
     swimming_distance = input("How many kilometers did you swim?: ")
     next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
-    worksheet.update_cell(next_row, 2, swimming_distance)  # Add swimming distance to the worksheet
+    worksheet.update_cell(next_row, 3, swimming_distance)  # Add swimming distance to the worksheet
 
 
-if __name__ == '__main__':
+def main():
     create_new_worksheet()
+
+main()

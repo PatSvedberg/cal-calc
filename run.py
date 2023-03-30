@@ -45,9 +45,13 @@ def create_new_worksheet():
     weight = insert_weight()
     worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
     worksheet.update_cell(1, 1, "Weight(kg)")
-    worksheet.update_cell(2, 1, weight)
+    worksheet.update_cell(2, 1, int(weight))
     worksheet.update_cell(1, 2, "Jogging Distance(km)")
-    worksheet.update_cell(1, 3, "Swimming Distance(km)")
+    worksheet.update_cell(1, 3, "Jog MET value:")
+    worksheet.update_cell(2, 3, int(7))
+    worksheet.update_cell(1, 4, "Swimming Distance(km)")
+    worksheet.update_cell(1, 5, "Swim MET value:")
+    worksheet.update_cell(2, 5, int(10))
 
     print(f"Welcome '{username}' what did you do today?\n")  
     print("1 - Jogging")
@@ -78,9 +82,9 @@ def swimming(worksheet):
     Function for swimming activity
     '''
     swimming_distance = input("How many kilometers did you swim?: ")
-    column_values = worksheet.col_values(3)  # Get all the values in the third column of the worksheet
+    column_values = worksheet.col_values(4)  # Get all the values in the third column of the worksheet
     next_row = len(column_values) + 1  # Find the next empty row in the third column
-    worksheet.update_cell(next_row, 3, swimming_distance)  # Add swimming distance to the next empty slot in the third column
+    worksheet.update_cell(next_row, 4, swimming_distance)  # Add swimming distance to the next empty slot in the third column
 
 
 def calculate_jog_value(worksheet):

@@ -59,22 +59,23 @@ def create_new_worksheet():
     activity = input("Select activity (1-2): ")
 
     if activity == '1':
-        jogging(worksheet)  # Pass the worksheet object to the jogging function
+        jogging(worksheet, weight)  # Pass the worksheet object to jog function
+        calculate_jog_value(worksheet, weight)
     elif activity == '2':
-        swimming(worksheet)  # Pass the worksheet object to the swimming function
+        swimming(worksheet)  # Pass the worksheet object to swim function
     else:
         print("Invalid input, please select 1 or 2.")
 
 
-def jogging(worksheet):
+def jogging(worksheet, weight):
     '''
     Function for jogging activity
     '''
     jogging_time = input("How many minutes did you jog?: ")
-    column_values = worksheet.col_values(2)  # Get all the values in the second column of the worksheet
-    next_row = len(column_values) + 1  # Find the next empty row in the second column
+    column_values = worksheet.col_values(2)  # Get all values in 2nd column of worksheet
+    next_row = len(column_values) + 1  # Find next empty row in the 2nd column
     worksheet.update_cell(next_row, 2, jogging_time)  # Add jogging time to the next empty slot in the second column
-    calculate_jog_value(worksheet)
+    calculate_jog_value(worksheet, weight)
 
 
 def swimming(worksheet):
@@ -83,20 +84,23 @@ def swimming(worksheet):
     '''
     swimming_distance = input("How many kilometers did you swim?: ")
     column_values = worksheet.col_values(4)  # Get all the values in the third column of the worksheet
-    next_row = len(column_values) + 1  # Find the next empty row in the third column
+    next_row = len(column_values) + 1  # Find next empty row in the 4th column
     worksheet.update_cell(next_row, 4, swimming_distance)  # Add swimming distance to the next empty slot in the third column
 
 
-def calculate_jog_value(worksheet):
+def calculate_jog_value(worksheet, weight):
     '''
     Print last value of jogging
     '''
-    jog_values = worksheet.col_values(2)
-    last_value = int(jog_values[-1]) 
+    jog_time = worksheet.col_values(2)
+    last_value = int(jog_time[-1])
     test_calc = last_value * 3
 
+    print(weight)
     print(f"Last value in this columns is {last_value}")
     print(f"Check calclation for fun... {test_calc}")
+
+    print("Calories burned")
 
 
 def main():

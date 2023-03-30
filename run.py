@@ -19,6 +19,7 @@ def create_user():
     username = input("Enter username: ")
     return username
 
+
 def insert_weight():
     '''
     Creates a value of the weight to calculate calories burnt
@@ -60,21 +61,25 @@ def create_new_worksheet():
     else:
         print("Invalid input, please select 1 or 2.")
 
+
 def jogging(worksheet):
     '''
     Function for jogging activity
     '''
     jogging_distance = input("How many kilometers did you jog?: ")
-    next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
-    worksheet.update_cell(next_row, 2, jogging_distance)  # Add jogging distance to the worksheet
+    column_values = worksheet.col_values(2)  # Get all the values in the second column of the worksheet
+    next_row = len(column_values) + 1  # Find the next empty row in the second column
+    worksheet.update_cell(next_row, 2, jogging_distance)  # Add jogging distance to the next empty slot in the second column
+
     
 def swimming(worksheet):
     '''
     Function for swimming activity
     '''
     swimming_distance = input("How many kilometers did you swim?: ")
-    next_row = len(worksheet.get_all_values()) + 1  # Find the next empty row in the worksheet
-    worksheet.update_cell(next_row, 3, swimming_distance)  # Add swimming distance to the worksheet
+    column_values = worksheet.col_values(3)  # Get all the values in the third column of the worksheet
+    next_row = len(column_values) + 1  # Find the next empty row in the third column
+    worksheet.update_cell(next_row, 3, swimming_distance)  # Add swimming distance to the next empty slot in the third column
 
 
 def main():

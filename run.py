@@ -12,8 +12,20 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('calCalc')
 
-stats = SHEET.worksheet('stats')
+def create_user():
+    '''
+    Creates a new user with the name given
+    '''
+    username = input("Enter username: ")
+    return username
 
-data = stats.get_all_values()
+def create_new_worksheet():
+    '''
+    Creates a new worksheet with the same name as the user
+    '''
+    username = create_user()
+    worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
+    print(f"New worksheet '{username}' created successfully!")
 
-print(data)
+if __name__ == '__main__':
+    create_new_worksheet()

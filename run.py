@@ -25,7 +25,30 @@ def create_new_worksheet():
     '''
     username = create_user()
     worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
-    print(f"New worksheet '{username}' created successfully!")
+    print(f"Welcome '{username}' what did you do today?\n")
+    print("Use the keys 1-2 to select activity:\n")
+    print("1 - Jogging")
+    print("2 - Swimming\n")
+    
+    activity = input("Select activity (1-2): ")
+    if activity == '1':
+        jogging()
+    elif activity == '2':
+        swimming()
+    else:
+        print("Invalid input, please select 1 or 2.")
+
+def jogging():
+    '''
+    Function for jogging activity
+    '''
+    jogging = input("How many kilometers did you jog?: ")
+    
+def swimming():
+    '''
+    Function for swimming activity
+    '''
+    swimming = input("How many kilometers did you swim?: ")
 
 if __name__ == '__main__':
     create_new_worksheet()

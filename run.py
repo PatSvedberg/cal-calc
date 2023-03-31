@@ -50,10 +50,10 @@ def create_new_worksheet():
     worksheet = SHEET.add_worksheet(title=username, rows=100, cols=20)
     worksheet.update_cell(1, 1, "Weight(kg)")
     worksheet.update_cell(2, 1, int(weight))
-    worksheet.update_cell(1, 2, "Jogging Distance(km)")
+    worksheet.update_cell(1, 2, "Jogging Time. Minutes")
     worksheet.update_cell(1, 3, "Jog MET value:")
     worksheet.update_cell(2, 3, JOG_MET)
-    worksheet.update_cell(1, 4, "Swimming Distance(km)")
+    worksheet.update_cell(1, 4, "Swimming Time. Minutes")
     worksheet.update_cell(1, 5, "Swim MET value:")
     worksheet.update_cell(2, 5, SWIM_MET)
 
@@ -66,7 +66,7 @@ def create_new_worksheet():
         jogging(worksheet, weight)  # Pass the worksheet object to jog function
         calculate_jog_value(worksheet, weight)
     elif activity == '2':
-        swimming(worksheet)  # Pass the worksheet object to swim function
+        swimming(worksheet, weight)  # Pass the worksheet object to swim function
     else:
         print("Invalid input, please select 1 or 2.")
 
@@ -82,14 +82,15 @@ def jogging(worksheet, weight):
     calculate_jog_value(worksheet, weight)
 
 
-def swimming(worksheet):
+def swimming(worksheet, weight):
     '''
     Function for swimming activity
     '''
-    swimming_distance = input("How many kilometers did you swim?: ")
+    swimming_distance = input("How many minutes did you swim?: ")
     column_values = worksheet.col_values(4)  # Get all the values in the third column of the worksheet
     next_row = len(column_values) + 1  # Find next empty row in the 4th column
     worksheet.update_cell(next_row, 4, swimming_distance)  # Add swimming distance to the next empty slot in the third column
+    calculate_swim_value(worksheet, weight)
 
 
 def calculate_jog_value(worksheet, weight):
@@ -103,10 +104,22 @@ def calculate_jog_value(worksheet, weight):
     print("Calories burned:", calories_burned)
 
 
+def calculate_swim_value(worksheet, weight):
+    '''
+    Print last value of swimming
+    '''
+    swim_min = worksheet.col_values(4)
+    swim_time = int(swim_min[-1])
+
+    calories_burned = round((SWIM_MET * 3.5 * weight * swim_time) / 200)
+    print("Calories burned:", calories_burned)
+
+
 def main():
     '''
     Main function
     '''
     create_new_worksheet()
+
 
 main()

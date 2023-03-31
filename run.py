@@ -98,9 +98,8 @@ def calculate_jog_value(worksheet, weight):
     jog_met = worksheet.col_values(3)
     jog_met_value = int(jog_met[-1])
 
-    print("Calories burned:", (jog_met_value * 3.5 * weight) / 200 * jog_time)
-
-
+    calories_burned = round((jog_met_value * 3.5 * weight * jog_time) / 200)
+    print("Calories burned:", calories_burned)
 
 
 def main():

@@ -56,17 +56,29 @@ def create_new_worksheet():
     worksheet.update_cell(1, 4, "Swimming Time. Minutes")
     worksheet.update_cell(1, 5, "Swim MET value:")
     worksheet.update_cell(2, 5, SWIM_MET)
+    activity_pick(worksheet, username, weight)
 
+
+def activity_pick(worksheet, username, weight):
+    '''
+    Pick activity. Jog or swim using the keys 1 and 2
+    '''
     print(f"Welcome '{username}' what did you do today?\n")  
     print("1 - Jogging")
     print("2 - Swimming\n")  
-    activity = input("Select activity (1-2): ")
 
-    if activity == '1':
+    try:
+        activity = int(input("Enter activity number (1 for Jogging, 2 for Swimming): "))
+    except ValueError:
+        print("Invalid input, please enter a number.")
+        return activity_pick(worksheet, username, weight)
+
+    if activity == 1:
         jogging(worksheet, weight)  # Pass the worksheet object to jog function
         calculate_jog_value(worksheet, weight)
-    elif activity == '2':
+    elif activity == 2:
         swimming(worksheet, weight)  # Pass the worksheet object to swim function
+        calculate_swim_value(worksheet, weight)
     else:
         print("Invalid input, please select 1 or 2.")
 

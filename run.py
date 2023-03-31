@@ -12,6 +12,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('calCalc')
 
+JOG_MET = 7
+SWIM_MET = 10
+
+
 def create_user():
     '''
     Creates a new user with the name given
@@ -48,10 +52,10 @@ def create_new_worksheet():
     worksheet.update_cell(2, 1, int(weight))
     worksheet.update_cell(1, 2, "Jogging Distance(km)")
     worksheet.update_cell(1, 3, "Jog MET value:")
-    worksheet.update_cell(2, 3, int(7))
+    worksheet.update_cell(2, 3, JOG_MET)
     worksheet.update_cell(1, 4, "Swimming Distance(km)")
     worksheet.update_cell(1, 5, "Swim MET value:")
-    worksheet.update_cell(2, 5, int(10))
+    worksheet.update_cell(2, 5, SWIM_MET)
 
     print(f"Welcome '{username}' what did you do today?\n")  
     print("1 - Jogging")
@@ -95,10 +99,7 @@ def calculate_jog_value(worksheet, weight):
     jog_min = worksheet.col_values(2)
     jog_time = int(jog_min[-1])
 
-    jog_met = worksheet.col_values(3)
-    jog_met_value = int(jog_met[-1])
-
-    calories_burned = round((jog_met_value * 3.5 * weight * jog_time) / 200)
+    calories_burned = round((JOG_MET * 3.5 * weight * jog_time) / 200)
     print("Calories burned:", calories_burned)
 
 

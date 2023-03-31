@@ -92,15 +92,15 @@ def calculate_jog_value(worksheet, weight):
     '''
     Print last value of jogging
     '''
-    jog_time = worksheet.col_values(2)
-    last_value = int(jog_time[-1])
-    test_calc = last_value * 3
+    jog_min = worksheet.col_values(2)
+    jog_time = int(jog_min[-1])
 
-    print(weight)
-    print(f"Last value in this columns is {last_value}")
-    print(f"Check calclation for fun... {test_calc}")
+    jog_met = worksheet.col_values(3)
+    jog_met_value = int(jog_met[-1])
 
-    print("Calories burned")
+    print("Calories burned:", (jog_met_value * 3.5 * weight) / 200 * jog_time)
+
+
 
 
 def main():

@@ -44,7 +44,7 @@ The cells in your muscles use oxygen to help create the energy needed to move yo
 
 So, for example, if you weigh 160 pounds (72.5 kg), you consume about 254 milliliters of oxygen per minute while you’re at rest (72.5 kg x 3.5 mL).
 <br>
-[https://www.healthline.com/health/what-are-mets#calculation](Source)
+[Source - www.healthline.com](https://www.healthline.com/health/what-are-mets#calculation)
 
 ### Calculation display
 When after the time has been entered the program calculates the calories burned with the equation above and shows it to the user.
@@ -57,6 +57,9 @@ After the calculation is done the user is able to press 1 to pick a new activity
 I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
 
 # Testing
+
+## Known bugs
+* <b>2023-03-31:</b> The program prints the calories burned twice.
 ## Pep8
 Add here
 

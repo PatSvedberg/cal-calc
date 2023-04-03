@@ -33,11 +33,18 @@ After picking the activity, the user will be asked to enter for how long they di
 ## The calculation
 ### The equation
 The equation i used to calculate how many calories was burned:<br>
-<b>Calories burned = (time * MET * weight) / 200</b><br><br>
+<b>Calories burned = (MET * 3.5 * weight * time) / 200</b><br><br>
+
 <b>MET</b> (Metabolic Equivalent of Task) is a measure of the intensity of physical activity. It is defined as the ratio of the rate at which a person expends energy during an activity, to the rate at which they expend energy while at rest. The value of different activities varies slightly. For this program I used:
 
 * 7 for Jogging
 * 10 for Swimming
+
+The cells in your muscles use oxygen to help create the energy needed to move your muscles. One MET is approximately 3.5 milliliters of oxygen consumed per kilogram (kg) of body weight per minute.
+
+So, for example, if you weigh 160 pounds (72.5 kg), you consume about 254 milliliters of oxygen per minute while you’re at rest (72.5 kg x 3.5 mL).
+<br>
+[https://www.healthline.com/health/what-are-mets#calculation](Source)
 
 ### Calculation display
 When after the time has been entered the program calculates the calories burned with the equation above and shows it to the user.

@@ -1,31 +1,40 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CalCalc - Calorie Calculator. Project 3 by Patric Svedberg
 
-Welcome PatSvedberg,
+# Introduction
+Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
+CalCalc runs in the Code Institute mock terminal on Heroku. The main goal is to calculate the calories burned after an activity.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# User Experience - UX
+## User Stories:
+* ### User Goals:
+    * The user should be able to understand the program without prior experience with it
+    * The screen should not be unnecessarily cluttered with text.
 
-## Reminders
+* ### Creator Goals:
+    * I want to create a program that can be used with as few inputs as possible
+    * The worksheet should be easy to understand and read.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+# Design
 
-## Creating the Heroku app
+## Flowchart - TO BE ADDED
+Flowchart picutre
+# Features
+## Start
+### Setting up the profile
+When the program starts the user will be asked to enter a username. Then a worksheet will be created named after the username inside the connected Google Sheet. Next the user will be asked to enter their current weight. This will be used to calculate the calories burned later.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Activity
+### Picking and activity
+Now the profile is set and the user will be asked to pick and activity. Right now there is only two activities. But more can easily be added. You enter (1) to pick jogging (2) to pick swimming.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Enter time
+After picking the activity, the user will be asked to enter for how long they did that activity.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## The calculation
+### The equation
+The equation i used to calculate how many calories was burned:<br>
+Calories burned = (time * MET * weight) / 200<br><br>
+<b>MET</b> (Metabolic Equivalent of Task) is a measure of the intensity of physical activity. It is defined as the ratio of the rate at which a person expends energy during an activity, to the rate at which they expend energy while at rest. The value of different activities varies slightly. For this program I used:
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+* 7 for Jogging
+* 10 for Swimming

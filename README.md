@@ -42,6 +42,10 @@ The equation i used to calculate how many calories was burned:<br>
 ### Calculation display
 When after the time has been entered the program calculates the calories burned with the equation above and shows it to the user.
 
+## Pick new activity
+### After calculation
+After the calculation is done the user is able to press 1 to pick a new activity. The new activity will be added to the same worksheet.
+
 # Storage Data
 I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
 

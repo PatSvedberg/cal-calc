@@ -33,8 +33,33 @@ After picking the activity, the user will be asked to enter for how long they di
 ## The calculation
 ### The equation
 The equation i used to calculate how many calories was burned:<br>
-Calories burned = (time * MET * weight) / 200<br><br>
+<b>Calories burned = (time * MET * weight) / 200</b><br><br>
 <b>MET</b> (Metabolic Equivalent of Task) is a measure of the intensity of physical activity. It is defined as the ratio of the rate at which a person expends energy during an activity, to the rate at which they expend energy while at rest. The value of different activities varies slightly. For this program I used:
 
 * 7 for Jogging
 * 10 for Swimming
+
+### Calculation display
+When after the time has been entered the program calculates the calories burned with the equation above and shows it to the user.
+
+# Storage Data
+I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
+
+# Testing
+## Pep8
+Add here
+
+## Lighthouse
+Add here
+
+# Technologies Used
+## Languages Used
+* Python
+
+## Softwares used
+* Git
+* Github
+* Heroku
+* Lucidchart
+* Pep8
+* Gitpod

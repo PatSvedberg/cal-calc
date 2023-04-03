@@ -114,6 +114,7 @@ def calculate_jog_value(worksheet, weight):
 
     calories_burned = round((JOG_MET * 3.5 * weight * jog_time) / 200)
     print("Calories burned:", calories_burned)
+    pick_new_act(worksheet, None, weight)
 
 
 def calculate_swim_value(worksheet, weight):
@@ -125,6 +126,22 @@ def calculate_swim_value(worksheet, weight):
 
     calories_burned = round((SWIM_MET * 3.5 * weight * swim_time) / 200)
     print("Calories burned:", calories_burned)
+
+
+def pick_new_act(worksheet, username, weight):
+    '''
+    Enter 1 to go back to the activity pick function
+    '''
+    try:
+        new_act = int(input("Enter 1 to pick a new activity: "))
+    except ValueError:
+        print("Invalid input, please enter 1 to pick a new activity.")
+        return activity_pick(worksheet, username, weight)
+    if new_act == 1:
+        return activity_pick(worksheet, username, weight)
+    return
+
+
 
 
 def main():

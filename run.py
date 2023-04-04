@@ -105,7 +105,7 @@ def jogging(worksheet, weight):
     '''
     while True:
         jogging_time = input("How many minutes did you jog?: ")
-        
+        print("\n")
         try:
             jogging_time = int(jogging_time)
             if jogging_time >= 1:

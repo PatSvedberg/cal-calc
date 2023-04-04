@@ -20,8 +20,12 @@ def create_user():
     '''
     Creates a new user with the name given
     '''
-    username = input("Enter username: ")
-    return username
+    while True:
+        username = input("Enter username: ")
+        if username.strip():  # if the username is not empty or only spaces
+            return username
+        else:
+            print("Invalid username. Username cannot be empty or only spaces.")
 
 
 def insert_weight():
@@ -68,7 +72,9 @@ def activity_pick(worksheet, username, weight):
     print("2 - Swimming\n")  
 
     try:
-        activity = int(input("Enter activity number (1 for Jogging, 2 for Swimming): "))
+        activity = int(
+            input("Enter activity number (1 for Jogging, 2 for Swimming): ")
+        )
     except ValueError:
         print("Invalid input, please enter a number.")
         return activity_pick(worksheet, username, weight)
@@ -88,7 +94,7 @@ def jogging(worksheet, weight):
     Function for jogging activity
     '''
     jogging_time = input("How many minutes did you jog?: ")
-    column_values = worksheet.col_values(2)  # Get all values in 2nd column of worksheet
+    column_values = worksheet.col_values(2) # Get all values in 2nd column of worksheet
     next_row = len(column_values) + 1  # Find next empty row in the 2nd column
     worksheet.update_cell(next_row, 2, jogging_time)  # Add jogging time to the next empty slot in the second column
     calculate_jog_value(worksheet, weight)
@@ -126,7 +132,8 @@ def calculate_swim_value(worksheet, weight):
 
     calories_burned = round((SWIM_MET * 3.5 * weight * swim_time) / 200)
     print("Calories burned:", calories_burned)
-
+    pick_new_act(worksheet, None, weight)
+    
 
 def pick_new_act(worksheet, username, weight):
     '''
@@ -140,8 +147,6 @@ def pick_new_act(worksheet, username, weight):
     if new_act == 1:
         return activity_pick(worksheet, username, weight)
     return
-
-
 
 
 def main():

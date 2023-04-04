@@ -60,6 +60,7 @@ I have used a Google sheet for this project. This sheet is connected to the code
 
 ## Known bugs
 * <b>2023-03-31:</b> The program prints the calories burned twice.
+    * Bug got solved by calling the pick_new_act under the print calories burned somehow. Unsure what caused it in the first place.
 ## Pep8
 Add here
 

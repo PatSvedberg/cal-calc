@@ -99,7 +99,16 @@ def jogging(worksheet, weight):
     '''
     Function for jogging activity
     '''
-    jogging_time = input("How many minutes did you jog?: ")
+    while True:
+        jogging_time = input("How many minutes did you jog?: ")
+        try:
+            jogging_time = int(jogging_time)
+            if jogging_time >= 1:
+                break
+            print("You need to enter a number of 1 or greater.")
+        except ValueError:
+            print("You need to enter a number of 1 or greater.")
+    
     # Get all values in 2nd column of worksheet
     column_values = worksheet.col_values(2)
     # Find next empty row in the 2nd column
@@ -113,7 +122,16 @@ def swimming(worksheet, weight):
     '''
     Function for swimming activity
     '''
-    swimming_distance = input("How many minutes did you swim?: ")
+    while True:
+        swimming_distance = input("How many minutes did you swim?: ")
+        try:
+            swimming_distance = int(swimming_distance)
+            if swimming_distance >= 1:
+                break
+            print("You need to enter a number of 1 or greater.")
+        except ValueError:
+            print("You need to enter a number of 1 or greater.")
+    
     # Get all the values in the third column of the worksheet
     column_values = worksheet.col_values(4)
     # Find next empty row in the 4th column
@@ -121,6 +139,7 @@ def swimming(worksheet, weight):
     # Add swimming distance to the next empty slot in the third column
     worksheet.update_cell(next_row, 4, swimming_distance)
     calculate_swim_value(worksheet, weight)
+
 
 
 def calculate_jog_value(worksheet, weight):

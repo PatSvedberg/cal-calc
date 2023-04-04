@@ -20,6 +20,8 @@ def create_user():
     '''
     Creates a new user with the name given
     '''
+    print("Welcome to CalCalc\n")
+    print("Your personal Calorie Calculator!\n")
     while True:
         username = input("Enter username: ")
         if username.strip():  # if the username is not empty or only spaces

@@ -18,10 +18,8 @@ CalCalc runs in the Code Institute mock terminal on Heroku. The main goal is to 
     * The worksheet should be easy to understand and read.
 
 # Design
-
 ## Flowchart
 ![Image of flowchart](assets/images/flowchart_readme.png)
-
 # Features
 ## Start
 ### Setting up the profile
@@ -84,10 +82,10 @@ Entering "2" will exit the program.
 I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
 
 # Testing
-
 ## Known bugs
 * <b>2023-03-31:</b> The program prints the calories burned twice.
     * Bug got solved by calling the pick_new_act under the print calories burned somehow. Unsure what caused it in the first place.
+<br>
 ## Python Linter
 <br>
 
@@ -105,3 +103,11 @@ I have used a Google sheet for this project. This sheet is connected to the code
 * [Gitpod](https://gitpod.io/)
 * [Google Drive](https://drive.google.com/)
 * [Google Sheets](https://www.google.com/sheets/about/)
+
+# Content
+## Helpful souces
+* [W3schools](https://www.w3schools.com/python/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Reddit r/Python](https://www.reddit.com/r/Python/)
+* [Code Institute](https://learn.codeinstitute.net/dashboard)
+* [Youtube](https://www.youtube.com/)

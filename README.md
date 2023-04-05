@@ -1,5 +1,8 @@
 # CalCalc - Calorie Calculator. Project 3 by Patric Svedberg
 
+## [Heroku Deployment](https://calcalc.herokuapp.com/)
+<br>
+
 # Introduction
 Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
 CalCalc runs in the Code Institute mock terminal on Heroku. The main goal is to calculate the calories burned after an activity.
@@ -16,8 +19,9 @@ CalCalc runs in the Code Institute mock terminal on Heroku. The main goal is to 
 
 # Design
 
-## Flowchart - TO BE ADDED
-Flowchart picutre
+## Flowchart
+![Image of flowchart](assets/images/flowchart_readme.png)
+
 # Features
 ## Start
 ### Setting up the profile
@@ -84,20 +88,20 @@ I have used a Google sheet for this project. This sheet is connected to the code
 ## Known bugs
 * <b>2023-03-31:</b> The program prints the calories burned twice.
     * Bug got solved by calling the pick_new_act under the print calories burned somehow. Unsure what caused it in the first place.
-## Pep8
-Add here
+## Python Linter
+<br>
 
-## Lighthouse
-Add here
+![Image of program start](assets/images/linter_readme.PNG)
 
 # Technologies Used
 ## Languages Used
-* Python
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## Softwares used
-* Git
-* Github
-* Heroku
-* Lucidchart
-* Pep8
-* Gitpod
+* [Github](https://github.com/PatSvedberg/cal-calc)
+* [Heroku](https://calcalc.herokuapp.com/)
+* [CI Python Linter](https://pep8ci.herokuapp.com/#)
+* [Lucidchart](https://www.lucidchart.com/pages)
+* [Gitpod](https://gitpod.io/)
+* [Google Drive](https://drive.google.com/)
+* [Google Sheets](https://www.google.com/sheets/about/)

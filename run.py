@@ -75,9 +75,9 @@ def activity_pick(worksheet, username, weight):
     '''
     Pick activity. Jog or swim using the keys 1 and 2
     '''
-    print(f"Welcome {username} what did you do today?\n")  
+    print(f"Welcome {username} what did you do today?\n")
     print("1 - Jogging")
-    print("2 - Swimming\n")  
+    print("2 - Swimming\n")
 
     try:
         activity = int(
@@ -113,7 +113,6 @@ def jogging(worksheet, weight):
             print("You need to enter a number of 1 or greater.")
         except ValueError:
             print("You need to enter a number of 1 or greater.")
-    
     # Get all values in 2nd column of worksheet
     column_values = worksheet.col_values(2)
     # Find next empty row in the 2nd column
@@ -137,7 +136,6 @@ def swimming(worksheet, weight):
             print("You need to enter a number of 1 or greater.")
         except ValueError:
             print("You need to enter a number of 1 or greater.")
-    
     # Get all the values in the third column of the worksheet
     column_values = worksheet.col_values(4)
     # Find next empty row in the 4th column
@@ -145,7 +143,6 @@ def swimming(worksheet, weight):
     # Add swimming distance to the next empty slot in the third column
     worksheet.update_cell(next_row, 4, swimming_distance)
     calculate_swim_value(worksheet, weight)
-
 
 
 def calculate_jog_value(worksheet, weight):

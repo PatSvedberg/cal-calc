@@ -80,12 +80,16 @@ Entering "2" will exit the program.
 
 # Storage Data
 I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
+<br>
+<br>
+
+![Image of program exiting](assets/images/worksheet_readme.png)
 
 # Testing
 ## Known bugs
 * <b>2023-03-31:</b> The program prints the calories burned twice.
     * Bug got solved by calling the pick_new_act under the print calories burned somehow. Unsure what caused it in the first place.
-<br>
+
 ## Python Linter
 <br>
 

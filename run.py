@@ -26,10 +26,10 @@ def create_user():
     print("Your personal Calorie Calculator!\n")
     while True:
         username = input("Enter username: ")
-        if username.strip():  # if the username is not empty or only spaces
+        if username.isalpha():  # if username is a string
             return username
         else:
-            print("Invalid username. Username cannot be empty or only spaces.")
+            print("Invalid username. Username can only contain letters.")
 
 
 def insert_weight():

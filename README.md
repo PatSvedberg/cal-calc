@@ -29,19 +29,22 @@ When the program starts the user will be asked to enter a username. Then a works
 ![Image of program start](assets/images/start_readme.PNG)
 <br>
 <br>
+
 ![Image of weight input](assets/images/user_weight_readme.PNG)
 
 ## Activity
 ### Picking and activity
-Now the profile is set and the user will be asked to pick and activity. Right now there is only two activities. But more can easily be added. You enter (1) to pick jogging (2) to pick swimming.
+Now the profile is set and the user will be asked to pick an activity. Right now there are only two activities. But more can easily be added. You enter (1) to pick jogging (2) to pick swimming.
 <br>
 <br>
+
 ![Image of activity picker](assets/images/activity_readme.PNG)
 
 ### Enter time
 After picking the activity, the user will be asked to enter for how long they did that activity.
 <br>
 <br>
+
 ![Image of user enter time](assets/images/time_readme.PNG)
 
 ## The calculation
@@ -64,13 +67,14 @@ So, for example, if you weigh 160 pounds (72.5 kg), you consume about 254 millil
 When after the time has been entered the program calculates the calories burned with the equation above and shows it to the user.
 <br>
 <br>
-![Image of calculated resault](assets/images/calculated_readme.PNG)
+![Image of calculated result](assets/images/calculated_readme.PNG)
 
 ## Pick new activity
 ### After calculation
 After the calculation is done the user is able to enter "1" to pick a new activity. The new activity will be added to the same worksheet.
 <br>
-![Image of new acivity picker](assets/images/new_activity_readme.PNG)
+
+![Image of new activity picker](assets/images/new_activity_readme.PNG)
 <br>
 <br>
 Entering "2" will exit the program.
@@ -82,7 +86,6 @@ Entering "2" will exit the program.
 I have used a Google sheet for this project. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. After the player enters the username a new worksheet is created with the same name as the user. Here the weight and time for each activity is saved.
 <br>
 <br>
-
 ![Image of program exiting](assets/images/worksheet_readme.png)
 
 # Testing
@@ -91,8 +94,6 @@ I have used a Google sheet for this project. This sheet is connected to the code
     * Bug got solved by calling the pick_new_act under the print calories burned somehow. Unsure what caused it in the first place.
 
 ## Python Linter
-<br>
-
 ![Image of program start](assets/images/linter_readme.PNG)
 
 # Technologies Used

@@ -1,6 +1,6 @@
 # CalCalc - Calorie Calculator. Project 3 by Patric Svedberg
 
-## [Heroku Deployment](https://calcalc.herokuapp.com/)
+## [Heroku Deployment](https://calcalc-7d1f5bebf339.herokuapp.com/)
 <br>
 
 # Introduction
